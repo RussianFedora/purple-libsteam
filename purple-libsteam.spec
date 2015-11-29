@@ -1,14 +1,17 @@
-%define plugin_name libsteam
-%define dir_name steam-mobile
-%define gitrevision 5aef56a958654041c49c74693920f1f9d87ad94b
+%global plugin_name libsteam
+%global dir_name steam-mobile
+
+%global commit0 5aef56a958654041c49c74693920f1f9d87ad94b
+%global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
+%global date 20151129
 
 Name: purple-%{plugin_name}
 Version: 1.6.1
-Release: 2
+Release: 2.%{date}git%{shortcommit0}%{?dist}
 Summary: Steam plugin for Pidgin/Adium/libpurple
 License: GPLv3
 URL: https://github.com/EionRobb/pidgin-opensteamworks
-Source0: https://github.com/EionRobb/pidgin-opensteamworks/archive/%{gitrevision}.tar.gz
+Source0: https://github.com/EionRobb/pidgin-opensteamworks/archive/%{commit0}.tar.gz#/pidgin-opensteamworks-%{shortcommit0}.tar.gz
 BuildRequires: pkgconfig(glib-2.0)
 BuildRequires: pkgconfig(purple)
 BuildRequires: pkgconfig(json-glib-1.0)
@@ -31,7 +34,7 @@ based messengers.
 Adds pixmaps, icons and smileys for Steam protocol inplemented by steam-mobile.
 
 %prep
-%setup -qn pidgin-opensteamworks-%{gitrevision}
+%setup -qn pidgin-opensteamworks-%{commit0}
 
 # fix W: wrong-file-end-of-line-encoding
 perl -i -pe 's/\r\n/\n/gs' README.md
