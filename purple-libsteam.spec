@@ -21,7 +21,7 @@ BuildRequires: pkgconfig(gnome-keyring-1)
 BuildRequires: gcc
 
 %package -n pidgin-%{plugin_name}
-Summary: Adds pixmaps, icons and smileys for Steam protocol.
+Summary: Adds pixmaps, icons and smileys for Steam protocol
 BuildArch: noarch
 Requires: %{name} = %{version}-%{release}
 Requires: pidgin
