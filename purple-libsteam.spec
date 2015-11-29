@@ -59,14 +59,7 @@ chmod 755 %{buildroot}%{_libdir}/purple-2/%{plugin_name}.so
 %doc README.md
 
 %files -n pidgin-%{plugin_name}
-%dir %{_datadir}/pixmaps/pidgin
-%dir %{_datadir}/pixmaps/pidgin/protocols
-%dir %{_datadir}/pixmaps/pidgin/protocols/16
-%{_datadir}/pixmaps/pidgin/protocols/16/steam.png
-%dir %{_datadir}/pixmaps/pidgin/protocols/22
-%{_datadir}/pixmaps/pidgin/protocols/22/steam.png
-%dir %{_datadir}/pixmaps/pidgin/protocols/48
-%{_datadir}/pixmaps/pidgin/protocols/48/steam.png
+%{_datadir}/pixmaps/pidgin/protocols/*/steam.png
 
 %changelog
 * Sun Nov 29 2015 V1TSK <vitaly@easycoding.org> - 1.6.1-2
