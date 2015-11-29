@@ -9,9 +9,11 @@ Name: purple-%{plugin_name}
 Version: 1.6.1
 Release: 2.%{date}git%{shortcommit0}%{?dist}
 Summary: Steam plugin for Pidgin/Adium/libpurple
+
 License: GPLv3
 URL: https://github.com/EionRobb/pidgin-opensteamworks
 Source0: https://github.com/EionRobb/pidgin-opensteamworks/archive/%{commit0}.tar.gz#/pidgin-opensteamworks-%{shortcommit0}.tar.gz
+
 BuildRequires: pkgconfig(glib-2.0)
 BuildRequires: pkgconfig(purple)
 BuildRequires: pkgconfig(json-glib-1.0)
