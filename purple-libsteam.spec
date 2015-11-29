@@ -3,7 +3,7 @@
 
 %global commit0 5aef56a958654041c49c74693920f1f9d87ad94b
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-%global date 20151129
+%global date 20151115
 
 Name: purple-%{plugin_name}
 Version: 1.6.1
@@ -65,7 +65,7 @@ chmod 755 %{buildroot}%{_libdir}/purple-2/%{plugin_name}.so
 %{_datadir}/pixmaps/pidgin/protocols/*/steam.png
 
 %changelog
-* Sun Nov 29 2015 V1TSK <vitaly@easycoding.org> - 1.6.1-2
+* Sun Nov 29 2015 V1TSK <vitaly@easycoding.org> - 1.6.1-2.20151115git5aef56a
 - Applyed Maxim Orlov's fixes.
 
 * Wed Oct 14 2015 V1TSK <vitaly@easycoding.org> - 1.6.1-1
