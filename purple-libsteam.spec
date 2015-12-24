@@ -1,9 +1,9 @@
 %global plugin_name libsteam
 %global dir_name steam-mobile
 
-%global commit0 72fdb9d0733c63d3a3284e1d289453cc5c5dbcdd
+%global commit0 ef6215fb1c709db4d858c8c46dbc026c1e0fef68
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-%global date 20151204
+%global date 20151224
 
 Name: purple-%{plugin_name}
 Version: 1.6.1
@@ -68,6 +68,9 @@ chmod 755 %{buildroot}%{_libdir}/purple-2/%{plugin_name}.so
 %{_datadir}/pixmaps/pidgin/protocols/*/steam.png
 
 %changelog
+* Thu Dec 24 2015 V1TSK <vitaly@easycoding.org> - 1.6.1-3.20151224gitef6215f
+- Updated to latest version.
+
 * Fri Dec 04 2015 V1TSK <vitaly@easycoding.org> - 1.6.1-3.20151204git72fdb9d
 - Added license file.
 
