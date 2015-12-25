@@ -7,7 +7,7 @@
 
 Name: purple-%{plugin_name}
 Version: 1.6.1
-Release: 3.%{date}git%{shortcommit0}%{?dist}
+Release: 4.%{date}git%{shortcommit0}%{?dist}
 Summary: Steam plugin for Pidgin/Adium/libpurple
 
 License: GPLv3
@@ -68,7 +68,7 @@ chmod 755 %{buildroot}%{_libdir}/purple-2/%{plugin_name}.so
 %{_datadir}/pixmaps/pidgin/protocols/*/steam.png
 
 %changelog
-* Thu Dec 24 2015 V1TSK <vitaly@easycoding.org> - 1.6.1-3.20151224gitef6215f
+* Thu Dec 24 2015 V1TSK <vitaly@easycoding.org> - 1.6.1-4.20151224gitef6215f
 - Updated to latest version.
 
 * Fri Dec 04 2015 V1TSK <vitaly@easycoding.org> - 1.6.1-3.20151204git72fdb9d
