@@ -68,7 +68,7 @@ chmod 755 %{buildroot}%{_libdir}/purple-2/%{plugin_name}.so
 %{_datadir}/pixmaps/pidgin/protocols/*/steam.png
 
 %changelog
-* Tue Jan 12 2016 V1TSK <vitaly@easycoding.org> - 1.6.1-5.20151224git8646d36
+* Tue Jan 12 2016 V1TSK <vitaly@easycoding.org> - 1.6.1-5.20160108git8646d36
 - Updated to latest version from Git.
 
 * Thu Dec 24 2015 V1TSK <vitaly@easycoding.org> - 1.6.1-4.20151224gitef6215f
