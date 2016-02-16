@@ -1,13 +1,13 @@
 %global plugin_name libsteam
 %global dir_name steam-mobile
 
-%global commit0 8646d361b6139e5db02dbb1e7761ef0831ff2a4a
+%global commit0 9d51f3049b9d1daa4c94bc7d5bdb49c776fae0d3
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-%global date 20160108
+%global date 20160216
 
 Name: purple-%{plugin_name}
 Version: 1.6.1
-Release: 5.%{date}git%{shortcommit0}%{?dist}
+Release: 6.%{date}git%{shortcommit0}%{?dist}
 Summary: Steam plugin for Pidgin/Adium/libpurple
 
 License: GPLv3
@@ -68,6 +68,9 @@ chmod 755 %{buildroot}%{_libdir}/purple-2/%{plugin_name}.so
 %{_datadir}/pixmaps/pidgin/protocols/*/steam.png
 
 %changelog
+* Tue Feb 16 2016 V1TSK <vitaly@easycoding.org> - 1.6.1-6.20160216git9d51f30
+- Updated to latest version from Git.
+
 * Tue Jan 12 2016 V1TSK <vitaly@easycoding.org> - 1.6.1-5.20160108git8646d36
 - Updated to latest version from Git.
 
