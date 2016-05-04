@@ -1,10 +1,9 @@
 purple-libsteam
 ================
 
- * Название:			purple-libsteam
- * Мейнтейнер:			Vitaly Zaitsev
- * Репозиторий:			russianfedora-free
- * Почему не в апстриме:	??
- * Комментарий:			Добавляет поддержку протокола Steam в Pidgin и другие клиенты,
-				основанные на библиотеке libpurple.
+ * Package name:		*purple-libsteam*.
+ * Maintainer:			*Vitaly Zaitsev*.
+ * Repository:			*russianfedora-free*.
+ * Upstream status:		[*waiting for package review*](https://bugzilla.redhat.com/show_bug.cgi?id=1297854).
+ * Description:			adds support for Steam to Pidgin, Adium, Finch and other libpurple based messengers.
  
