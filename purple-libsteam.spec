@@ -33,7 +33,7 @@ Adds support for Steam to Pidgin, Adium, Finch and other libpurple
 based messengers.
 
 %description -n pidgin-%{plugin_name}
-Adds pixmaps, icons and smileys for Steam protocol inplemented by steam-mobile.
+Adds pixmaps, icons and smileys for Steam protocol implemented by steam-mobile.
 
 %prep
 %setup -qn pidgin-opensteamworks-%{commit0}
