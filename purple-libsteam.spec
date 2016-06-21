@@ -1,13 +1,13 @@
 %global plugin_name libsteam
 %global dir_name steam-mobile
 
-%global commit0 bf7dd28e4247f772313d1b4005c4084eb4890301
+%global commit0 cd5a29471d59ae2bf03836d72fe5e0fb817e8ad8
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-%global date 20160416
+%global date 20160618
 
 Name: purple-%{plugin_name}
 Version: 1.6.1
-Release: 8.%{date}git%{shortcommit0}%{?dist}
+Release: 11.%{date}git%{shortcommit0}%{?dist}
 Summary: Steam plugin for Pidgin/Adium/libpurple
 
 License: GPLv3
@@ -33,7 +33,7 @@ Adds support for Steam to Pidgin, Adium, Finch and other libpurple
 based messengers.
 
 %description -n pidgin-%{plugin_name}
-Adds pixmaps, icons and smileys for Steam protocol inplemented by steam-mobile.
+Adds pixmaps, icons and smileys for Steam protocol implemented by steam-mobile.
 
 %prep
 %setup -qn pidgin-opensteamworks-%{commit0}
@@ -41,23 +41,15 @@ Adds pixmaps, icons and smileys for Steam protocol inplemented by steam-mobile.
 # fix W: wrong-file-end-of-line-encoding
 perl -i -pe 's/\r\n/\n/gs' README.md
 
-# generating empty configure script
-cd %{dir_name}
-echo '#!/bin/bash' > configure
-chmod +x configure
-
 %build
 cd %{dir_name}
-%configure
+export CFLAGS="%{optflags}"
 %make_build
 
 %install
 cd %{dir_name}
 %make_install
 chmod 755 %{buildroot}%{_libdir}/purple-2/%{plugin_name}.so
-
-%post -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
 
 %files
 %{_libdir}/purple-2/%{plugin_name}.so
@@ -68,26 +60,35 @@ chmod 755 %{buildroot}%{_libdir}/purple-2/%{plugin_name}.so
 %{_datadir}/pixmaps/pidgin/protocols/*/steam.png
 
 %changelog
-* Mon May 02 2016 V1TSK <vitaly@easycoding.org> - 1.6.1-8.20160416gitbf7dd28
+* Sun Jun 19 2016 Vitaly Zaitsev <vitaly@easycoding.org> - 1.6.1-11.20160618gitcd5a294
+- Updated to latest Git snapshot.
+
+* Sat Jun 18 2016 Vitaly Zaitsev <vitaly@easycoding.org> - 1.6.1-10.20160416gitbf7dd28
+- Updated package description.
+
+* Sun Jun 12 2016 Vitaly Zaitsev <vitaly@easycoding.org> - 1.6.1-9.20160416gitbf7dd28
+- Removed empty configure script.
+
+* Mon May 02 2016 Vitaly Zaitsev <vitaly@easycoding.org> - 1.6.1-8.20160416gitbf7dd28
 - Updated to latest version from Git.
 
-* Fri Mar 04 2016 V1TSK <vitaly@easycoding.org> - 1.6.1-7.20160218git5a5beba
+* Fri Mar 04 2016 Vitaly Zaitsev <vitaly@easycoding.org> - 1.6.1-7.20160218git5a5beba
 - Updated to latest version from Git.
 
-* Tue Feb 16 2016 V1TSK <vitaly@easycoding.org> - 1.6.1-6.20160216git9d51f30
+* Tue Feb 16 2016 Vitaly Zaitsev <vitaly@easycoding.org> - 1.6.1-6.20160216git9d51f30
 - Updated to latest version from Git.
 
-* Tue Jan 12 2016 V1TSK <vitaly@easycoding.org> - 1.6.1-5.20160108git8646d36
+* Tue Jan 12 2016 Vitaly Zaitsev <vitaly@easycoding.org> - 1.6.1-5.20160108git8646d36
 - Updated to latest version from Git.
 
-* Thu Dec 24 2015 V1TSK <vitaly@easycoding.org> - 1.6.1-4.20151224gitef6215f
+* Thu Dec 24 2015 Vitaly Zaitsev <vitaly@easycoding.org> - 1.6.1-4.20151224gitef6215f
 - Updated to latest version.
 
-* Fri Dec 04 2015 V1TSK <vitaly@easycoding.org> - 1.6.1-3.20151204git72fdb9d
+* Fri Dec 04 2015 Vitaly Zaitsev <vitaly@easycoding.org> - 1.6.1-3.20151204git72fdb9d
 - Added license file.
 
-* Sun Nov 29 2015 V1TSK <vitaly@easycoding.org> - 1.6.1-2.20151115git5aef56a
+* Sun Nov 29 2015 Vitaly Zaitsev <vitaly@easycoding.org> - 1.6.1-2.20151115git5aef56a
 - Applyed Maxim Orlov's fixes.
 
-* Wed Oct 14 2015 V1TSK <vitaly@easycoding.org> - 1.6.1-1
+* Wed Oct 14 2015 Vitaly Zaitsev <vitaly@easycoding.org> - 1.6.1-1
 - Created first RPM spec for Fedora/openSUSE.
